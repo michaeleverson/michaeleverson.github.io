@@ -1,0 +1,4 @@
+name: Little Cosmic
+markdown: redcarpet
+pygments: true
+permalink: pretty

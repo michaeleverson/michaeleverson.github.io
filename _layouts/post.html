@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<div class="info">Posted on {{ page.date | date_to_string }}</div>
+
+{{ content }}
+
+<div id="by-line">
+{% assign authorCount = page.byline | size %}
+{% if authorCount == 0 %}
+     &mdash; Michael John Everson
+{% elsif authorCount == 1 %}
+    {{ page.byline | first }}
+{% else %}
+    {% for author in page.byline %}
+        {% if forloop.first %}
+             &mdash; {{ author }}
+        {% elsif forloop.last %}
+            and {{ author }}
+        {% else %}
+            , {{ author }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</div>
+
+
+
